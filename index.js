@@ -1,39 +1,37 @@
 import express from 'express'
-import { Person } from '../Person.js'
-
+import {Person} from './Person.js'
 const app = express()
 const router = express.Router()
-const port = +process.env.PORT || 4000
-
+const port = +process.env.PORT|| 5000
 app.use(
     express.json(),
     router
 )
-router.get('^/$|/class', (req, res) => {
+router.get('^/$|/class',(req ,res)=>{
     res.json({
-        status: res.statusCode,
-        msg: 'Youre home'
+        status:res.statusCode,
+        msg: 'You\'re home'
     })
 })
-// Get all persons
-router.get('/person1', (req, res) => {
+router.get('/person1',(req ,res)=>{
     let person1 = new Person()
-    person1.FirstName = "Shaun"
-    person1.LastName = "Louw"
-    person1.Age = 18
+    person1.FirstName = "shawn"
+    person1.LastName =  "Louw"
+    person1.Age = 35
     person1.display()
-    res.end('Please check the console');
-});
-router.get('/person2', (req, res) => {
+    res.end('Pease check the console')
+})
+router.get('/person2',(req ,res)=>{
     let person2 = new Person()
-    person2.FirstName = "Qaqambile"
-    person2.LastName = "Mnqika"
-    person1.Age = 20
+    person2.FirstName = "Sivuyisiwe"
+    person2.LastName = "Peter"
+    person2.Age = 23
     person2.display()
-    res.end('Please check the console');
-});
-
-
+    res.end('Pease check the console')
+})
+app.listen(port, ()=>{
+    console.log(`server is running on ${port}`);
+})
 
 // // Create a new person
 // router.post('/person', function (req, res) {

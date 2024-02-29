@@ -1,44 +1,40 @@
 class Person{
     static count = 0
-    constructor() {
+    constructor(){
         this.firstName = 'Please provide your first name'
-        this.lastName = 'Please provide your last name'
+        this.lastNamee = 'Please provide your last name'
         this.age = 0
         Person.count += 1
     }
-    // WE CREATE A GETTER AND SETTER TO ABLE THE USER
-    // TO CHANGE THE VALUE
-    set FirstName(value) {
+    set FirstName(value){
         this.firstName = value
     }
-    get FirstName() {
+    get  FirstName(){
         return this.firstName
     }
     set LastName(value) {
-        this.lastNametName = value
+        return this.lastName = value
     }
     get LastName() {
         return this.lastName
     }
     set Age(value) {
-        this.age = value
+        return this.age = value
     }
-    get Age() {
+    get age() {
         return this.age
     }
-    // DISPLAY METHOD
     display() {
         console.log(`
-        ======Person ID: 1======
+        ======Person ID: ${this.count}======
         First name: ${this.FirstName}
         Last name: ${this.LastName}
-        Age: ${this.Age}
+        Age ${this.Age}
         ====================================
         `
-        );
+     );
     }
 }
-
-export {
+export{
     Person
 }
